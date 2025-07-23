@@ -26,7 +26,8 @@ SRC=$(SRCDIR)CodeXplorer.cpp \
     $(SRCDIR)TypeExtractor.cpp \
     $(SRCDIR)TypeReconstructor.cpp \
     $(SRCDIR)MicrocodeExtractor.cpp \
-    $(SRCDIR)Utility.cpp
+    $(SRCDIR)Utility.cpp \
+    $(SRCDIR)Compat.cpp \
 
 OBJS=$(subst .cpp,.o,$(SRC))
 
@@ -35,12 +36,12 @@ LIBS=-lc -lpthread -ldl
 
 ifeq ($(EA64),1)
 	CFLAGS+=-D__EA64__
-	LIBS+=-lida64
+	LIBS+=-lida
 	EXT=so
     SUFFIX=64
 else
 	EXT=so
-	LIBS+=-lida
+	LIBS+=-lida32
     SUFFIX=
 endif
 
