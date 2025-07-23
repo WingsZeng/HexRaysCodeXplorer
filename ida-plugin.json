@@ -1,0 +1,7 @@
+{
+    "IDAMetadataDescriptorVersion": 1,
+    "plugin": {
+        "name": "HexRaysCodeXplorer",
+        "entryPoint": "src/HexRaysCodeXplorer/HexRaysCodeXplorer64.so"
+    }
+}
